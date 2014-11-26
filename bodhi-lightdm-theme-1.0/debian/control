@@ -1,8 +1,9 @@
 Source: bodhi-lightdm-theme
 Priority: optional
+Version: 0.1
 Section: misc
 Maintainer: Jeff Hoogland
-Uploaders: Eric Brown, Doug Yanez
+#Uploaders: Eric Brown, Doug Yanez
 Standards-Version: 3.9.1
 Build-Depends: debhelper (>= 7)
 

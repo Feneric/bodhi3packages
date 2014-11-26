@@ -1,12 +1,12 @@
 Package: radiance-theme-e19
-Version: 0.15
+Version: 0.15.5
 Section: main
 Architecture: all
 Priority: optional
 Depends: e19
 Conflicts: e18, e17
 Maintainer: Jeff Hoogland
-Uploaders: Eric Brown, Doug Yanez
+#Uploaders: Eric Brown, Doug Yanez
 Description: Radiance Theme
  Radiance E19 theme
 
