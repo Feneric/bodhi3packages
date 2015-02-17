@@ -20,7 +20,7 @@ case "$1" in
     configure)
 	update-alternatives \
 		--install /lib/plymouth/themes/default.plymouth default.plymouth \
-		/lib/plymouth/themes/Enriki-theme/Enriki-theme.plymouth 10
+		/lib/plymouth/themes/bodhi-theme/bodhi-theme.plymouth 10
 
 	if which update-initramfs >/dev/null 2>&1
 	then

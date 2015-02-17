@@ -1,0 +1,854 @@
+/*
+ * Header:  e/gtk-3.0/gtk-widgets.css       Exp
+ * Author:  -tclover <tokiclover@gmail.com> Exp
+ * License: 2-clause BSD (see COPYING file) Exp
+ *
+ * CopyLeft (c) 2012-2014 tclover <tokiclover@gmail.com>
+ */
+
+.background { background-color: @bg_color }
+.color { background-color: @fg_color }
+
+.button:active:hover,
+.button,
+.button:hover {
+	background-color: transparent;
+	background-image: url("img/button_normal.png");
+	background-origin: content-box;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 110% 108%;
+	border: none;
+}
+.button:active {
+	background-color: transparent;
+	background-image: url("img/button_clicked.png");
+	background-origin: content-box;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 110% 108%;
+	border: none;
+}
+
+.button:insensitive {
+	background-color: transparent;
+	background-image: url("img/button_clicked.png");
+	background-origin: content-box;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 114% 108%;
+	border: none;
+	-gtk-image-effect: dim;
+}
+
+column-header .button,
+column-header .button:insensitive {
+	background-image: url("img/holes_tiny_vert.png"), url("img/holes_tiny_vert.png"),
+		url("img/vgrad_med_curved.png");
+	background-origin: content-box, content-box, border-box;
+	background-position: left center, right center, center;
+	background-repeat: no-repeat;
+	background-size: auto, auto, 100% 100%;
+	border-image: url("img/bevel_out.png") 1 1 1 1 / 1px 1px 1px 1px stretch;
+}
+column-header .button:active,
+column-header .button:hover {
+	background-image: url("img/holes_tiny_vert.png"), url("img/holes_tiny_vert.png"),
+		url("img/vgrad_dark.png");
+	background-origin: content-box, content-box, border-box;
+	background-position: left center, right center, center;
+	background-repeat: no-repeat;
+	background-size: auto, auto, 100% 100%;
+	border-image: url("img/bevel_out.png") 1 1 1 1 / 1px 1px 1px 1px stretch;
+	color: @selected_bg_color;
+}
+
+.menuitem.check,
+.menuitem.check:hover,
+.menuitem.check:insensitive,
+.view.cell.check,
+.view.cell.check:hover,
+.view.cell.check:insensitive,
+.button.check,
+.button.check:hover,
+.button.check:insensitive,
+.check row:selected,
+.check row:selected:hover,
+.check row:selected:insensitive,
+.check,
+.check:insensitive {
+	background-color: transparent;
+	background-image: -gtk-scaled(url("img/inset_shadow_square_tiny.png"));
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 11px 11px;
+}
+
+.menuitem.check:active,
+.menuitem.check:active:insensitive,
+.view.cell.check:active,
+.view.cell.check:active:insensitive,
+.view.cell:active:insensitive,
+.button.check:active,
+.button.check:active:insensitive,
+.check row:selected:active,
+.check row:selected:active:insensitive,
+.check:inconsistent,
+.check:active,
+.check:active:insensitive {
+	background-color: transparent;
+	background-image: -gtk-scaled(url("img/inset_shadow_square_tiny_in.png"));
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 11px 11px;
+}
+
+.view.cell.check:active:hover,
+.button.check:active:hover,
+.check row:selected:active:hover,
+.check:active:hover,
+.check row:selected:hover {
+	background-color: transparent;
+	background-image: url("img/inset_shadow_square_tiny_in.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 11px 11px;
+}
+
+.menuitem.radio,
+.menuitem.radio:hover,
+.menuitem.radio:insensitive,
+.view.cell.radio,
+.view.cell.radio:hover,
+.view.cell.radio:insensitive,
+.button.radio,
+.button.radio:hover,
+.button.radio:insensitive,
+.radio row:selected,
+.radio row:selected:hover,
+.radio row:selected:insensitive,
+.radio,
+.radio:hover,
+.radio:insensitive {
+	background-color: transparent;
+	background-image: url("img/inset_shadow_circle_tiny.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 13px 13px;
+}
+
+.menuitem.radio:active,
+.menuitem.radio:active:insensitive,
+.view.cell.radio:active,
+.view.cell.radio:active:insensitive,
+.button.radio:active,
+.button.radio:active:insensitive,
+.radio row:selected:active,
+.radio row:selected:active:insensitive,
+.radio:active:insensitive,
+.radio:active {
+	background-color: transparent;
+	background-image: url("img/inset_shadow_circle_tiny_in.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 13px 13px;
+}
+
+.scrollbar.button,
+.scrollbar.button:active,
+.scrollbar.button:hover,
+.scrollbar.button:insensitive {
+	background-color: transparent;
+	border-style: solid;
+	border-image: none;
+	border-radius: 0px;
+	border-color: transparent;
+	border-width: 0px;
+	color: transparent;
+}
+
+.toolbar.separator.horizontal,
+.menuitem.separator,
+.separator.horizontal {
+	border-style: solid;
+	padding: 0px 4px;
+	border-image: url("img/separator_horiz.png") 1 0 1 0 / 1px 0px 1px 0px stretch;
+}
+
+.toolbar.separator.vertical,
+.button.separator,
+.separator.vertical {
+	border-style: solid;
+	padding: 4px 0px;
+	border-image: url("img/separator_vert.png") 0 1 0 1 / 0px 1px 0px 1px stretch;
+}
+
+.arrow.up,
+.scrollbar.button.top {
+	background-color: transparent;
+	background-image: url("img/sym_up_light_normal.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+.arrow.up:hover,
+.scrollbar.button.top:hover {
+	background-color: transparent;
+	background-image: url("img/sym_up_glow_normal.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+.arrow.up:active,
+.scrollbar.button.top:active {
+	background-color: transparent;
+	background-image: url("img/sym_up_dark_selected.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+.arrow.up:insensitive,
+.scrollbar.button.top:insensitive {
+	background-color: transparent;
+	background-image: url("img/sym_up_dark_normal.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+
+.arrow.down,
+.scrollbar.button.bottom {
+	background-color: transparent;
+	background-image: url("img/sym_down_light_normal.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+.arrow.down:hover,
+.expander.expanded:hover,
+.scrollbar.button.bottom:hover {
+	background-color: transparent;
+	background-image: url("img/sym_down_glow_normal.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+.arrow.down:active,
+.expander.expanded:active,
+.scrollbar.button.bottom:active {
+	background-color: transparent;
+	background-image: url("img/sym_down_dark_selected.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+.arrow.down:insensitive,
+.expander.expanded,
+.scrollbar.button.bottom:insensitive {
+	background-color: transparent;
+	background-image: url("img/sym_down_dark_normal.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+
+.arrow.right:active,
+.expander.collapsed:active,
+.menuitem.arrow:active,
+.scrollbar.button.right:active {
+	background-color: transparent;
+	background-image: url("img/sym_right_dark_selected.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+.arrow.right,
+.expander.collapsed,
+.menuitem.arrow,
+.scrollbar.button.right {
+	background-color: transparent;
+	background-image: url("img/sym_right_light_normal.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+.arrow.right:hover,
+.expander.collapsed:hover,
+.menuitem.arrow:hover,
+.scrollbar.button.right:hover {
+	background-color: transparent;
+	background-image: url("img/sym_right_glow_normal.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+.arrow.right:insensitive,
+.menuitem.arrow:insensitive,
+.scrollbar.button.right:insensitive {
+	background-color: transparent;
+	background-image: url("img/sym_right_dark_normal.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+
+.arrow.left,
+.scrollbar.button.left {
+	background-color: transparent;
+	background-image: url("img/sym_left_light_normal.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+.arrow.left:active
+.scrollbar.button.left:active {
+	background-color: transparent;
+	background-image: url("img/sym_left_dark_selected.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+.arrow.left:hover,
+.scrollbar.button.left:hover {
+	background-color: transparent;
+	background-image: url("img/sym_left_glow_normal.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+.arrow.left:insensitive,
+.scrollbar.button.left:insensitive {
+	background-color: transparent;
+	background-image: url("img/sym_left_dark_normal.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}
+
+.entry {
+	background-color: @bg_color_dark;
+	background-image: url("img/inset_shadow_tiny.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 104% 104%;
+	border-image: url("img/bevel_in.png") 1 1 1 1 / 1px 1px 1px 1px stretch;
+	border-width: 1px;
+}
+
+.entry:focus {
+	background-color: @bg_color_dark;
+	background-image: url("img/inset_shadow_tiny.png"), url("img/bg_glow_in.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 104% 104%;
+	border-image: url("img/bevel_in.png") 1 1 1 1 / 1px 1px 1px 1px stretch;
+	border-width: 1px;
+}
+
+.entry:insensitive {
+	background-color: @bg_color_dark;
+	background-image: url("img/inset_shadow_tiny.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 124% 124%;
+	border-image: url("img/bevel_in.png") 1 1 1 1 / 1px 1px 1px 1px stretch;
+	border-width: 1px;
+}
+
+.entry.progressbar {
+	background-color: @bg_color_dark;
+	background-image: url("img/inset_shadow_tiny.png"), url("img/horiz_glow_run_big.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 104% 104%;
+	border-image: url("img/bevel_in.png") 1 1 1 1 / 1px 1px 1px 1px stretch;
+	border-width: 1px;
+}
+
+.frame {
+	background-color: @bg_color;
+	border-image: url("img/bevel_in.png") 1 1 1 1 / 1px 1px 1px 1px stretch;
+}
+
+.grip {
+	background-color: transparent;
+	background-image: url("img/hole_tiny.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	border: none;
+}
+
+.pane-separator.horizontal,
+.handle.horizontal {
+	background-color: @bg_color_dark;
+	background-image: url("img/holes_vert.png");
+	background-origin: border-box;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+.pane-separator.vertical,
+.handle.vertical {
+	background-color: @bg_color_dark;
+	background-image: url("img/holes_horiz.png");
+	background-origin: border-box;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
+.menu {
+	color: @fg_color;
+	background-color: shade(@base_color,0.90);
+	background-image: url("img/shine.png"),url("img/vgrad_med_curved.png");
+	background-position: center -2px, top;
+	background-repeat: no-repeat;
+	background-size: auto, 100% 40px;
+	border-image: url("img/bevel_out.png") 1 1 1 1 / 1px 1px 1px 1px stretch;
+	padding: 0px;
+}
+
+.menu .menuitem {
+	-GtkMenuItem-arrow-scaling: 0.6;
+}
+.menuitem,
+.menuitem:active,
+.menuitem:hover {
+	background-color: transparent;
+}
+
+.menuitem:active,
+.menuitem:hover {
+	color: @selected_bg_color;
+	background-image: url("img/shine.png"), url("img/vgrad_dark.png");
+	background-position: center -2px, center;
+	background-repeat: no-repeat;
+	background-size: auto, 100% 100%;
+	background-origin: border-box;
+	border-image: url("img/bevel_out.png") 1 1 1 1 / 1px 1px 1px 1px stretch;
+}
+
+.menubar {
+	background-color: @bg_color;
+	background-image: url("img/separator_horiz.png");
+	background-origin: content-box;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: 100% 2px;
+}
+
+.menubar > .menuitem:active,
+.menubar > .menuitem:hover {
+	background: transparent;
+	background-image: url("img/shadow_angled_in_sides_glow.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-origin: border-box;
+}
+
+.scale.slider {
+	background-color: transparent;
+	background-image: url("img/knob_sz_14.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-origin: border-box;
+	padding: 0px;
+}
+
+GtkLevelBar,
+GtkSwitch.trough,
+.level-bar.trough.horizontal,
+.progressbar.trough.horizontal,
+.scale.trough.horizontal {
+	background-color: transparent;
+	background-image: url("img/slider_run_bevel_horiz.png"),
+		url("img/slider_run_base_horiz.png");
+	background-position: center 5px;
+	background-repeat: no-repeat, no-repeat;
+	background-size: 100% 5px, 100% 5px;
+}
+.level-bar.trough.vertical,
+.progressbar.trough.vertical,
+.scale.trough.vertical {
+	background-color: transparent;
+	background-image: url("img/slider_run_bevel_vert.png"),
+		url("img/slider_run_base_vert.png");
+	background-position: 5px center;
+	background-repeat: no-repeat, no-repeat;
+	background-size: 5px 100%, 5px 100%;
+}
+
+.level-bar.fill-block.horizontal,
+.level-bar.fill-block.empty-fill-block.horizontal,
+.level-bar.fill-block.level-low.horizontal,
+.level-bar.fill-block.level-high.horizontal,
+.progressbar.fill-block.horizontal,
+.scale.progressbar.horizontal {
+	background-color: transparent;
+	background-image: url("img/horiz_glow_run.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 3px 100%;
+	background-origin: content-box;
+	padding: 0px;
+}
+.level-bar.fill-block.vertical,
+.level-bar.fill-block.empty-fill-block.vertical,
+.level-bar.fill-block.level-low.vertical,
+.level-bar.fill-block.level-high.vertical,
+.progressbar.fill-block.vertical,
+.scale.progressbar.vertical {
+	background-color: transparent;
+	background-image: url("img/vert_glow_run.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 3px;
+	background-origin: content-box;
+	padding: 0px;
+}
+
+.level-bar.fill-block.level-low { background-color: alpha(red,0.5) }
+.level-bar.fill-block.level-high { background-color: alpha(blue,0.5) }
+
+.frame.shadow.in,
+.frame.shadow.etched.in,
+.shadow.in,
+.shadow.etched.in {
+	border-width: 1px 1px 1px 1px;
+	border-image: url("img/bevel_in.png") 1 1 1 1 / 1px 1px 1px 1px stretch;
+}
+
+.frame.shadow.out,
+.frame.shadow.etched.out,
+.shadow.out,
+.shadow.etched.out {
+	border-width: 1px 1px 1px 1px;
+	border-image: url("img/bevel_out.png") 1 1 1 1 / 1px 1px 1px 1px stretch;
+}
+
+.scrollbar.trough.vertical {
+	background-color: transparent;
+	background-image: url("img/trough_vert.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 15px 100%;
+}
+
+.scrollbar.trough.horizontal {
+	background-color: transparent;
+	background-image: url("img/trough_horiz.png");
+	background-repeat: no-repeat;
+	background-size: 100% 15px;
+}
+
+.scrollbar.slider.vertical {
+	background-color: transparent;
+	background-image: url("img/holes_tiny_vert.png"),
+		url("img/slider_vert.png"),
+		url("img/shadow_square_tiny.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto, 15px 90%, 15px 94%;
+}
+.scrollbar.slider.vertical:hover {
+	background-color: transparent;
+	background-image: url("img/holes_tiny_glow_vert.png"),
+		url("img/slider_vert.png"),
+		url("img/shadow_square_tiny.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto, 15px 90%, 15px 94%;
+}
+.scrollbar.slider.vertical:active {
+	background-color: transparent;
+	background-image: url("img/holes_tiny_glow_vert.png"),
+		url("img/slider_vert.png"),
+		url("img/box_glow.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto, 15px 90%, 130% 130%;
+}
+
+.scrollbar.slider.horizontal {
+	background-color: transparent;
+	background-image: url("img/holes_tiny_horiz.png"),
+		url("img/slider_horiz.png"),
+		url("img/shadow_square_tiny.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto, 90% 15px, 94% 15px;
+}
+.scrollbar.slider.horizontal:hover {
+	background-color: transparent;
+	background-image: url("img/holes_tiny_glow_horiz.png"),
+		url("img/slider_horiz.png"),
+		url("img/shadow_square_tiny.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto, 90% 15px, 94% 15px;
+}
+.scrollbar.slider.horizontal:active {
+	background-color: transparent;
+	background-image: url("img/holes_tiny_glow_horiz.png"),
+		url("img/slider_horiz.png"),
+		url("img/box_glow.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto, 90% 15px, 130% 130%;
+}
+
+.scrollbar.button {
+	background-color: transparent;
+}
+
+.spinbutton.button {
+	background-image: url("img/day_middle_normal.png");
+	background-origin: border-box;
+	background-repeat: no-repeat;
+	background-size: 110% 110%;
+	padding: 1px;
+}
+
+.notebook {
+	background-color: @base_color;
+	border-image: url("img/bg_bevel_in_big.png") 4 4 4 4 / 4px 4px 4px 4px stretch;
+	color: @fg_color;
+	padding: 4px;
+}
+
+.notebook.header {
+	background-color: shade(@bg_color_dark,0.90);
+	background-image: url("img/inset_shadow.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 1px;
+}
+
+.spinner {
+	background-color: transparent;
+	background-image: url("img/knob_round_busy.png"), url("img/inset_circle_tiny.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%, 90% 90%;
+	padding: 4px;
+}
+
+.spinner:active {
+	background-color: transparent;
+	background-image: url("img/knob_round_busy.png"), url("img/glow_round_corners.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%, 120% 120%;
+	padding: 4px;
+}
+
+.tab.bottom,
+.notebook tab.bottom,
+.tab.top,
+.notebook tab.top {
+	background-color: transparent;
+	border-image: none;
+	padding: 2px 0px;
+}
+
+.tab.letf,
+.notebook tab.left,
+.tab.right,
+.notebook tab.right {
+	background-color: transparent;
+	border-image: none;
+	padding: 0px 2px;
+}
+
+.tab.bottom:active,
+.notebook tab.bottom:active {
+	background-color: @bg_color;
+	background-image: url("img/horiz_bar_top_glow.png");
+	background-origin: content-box;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: 108% 22px;
+	border-image: none;
+	padding: 2px 0px;
+}
+
+.tab.top:active,
+.notebook tab.top:active {
+	background-color: @bg_color;
+	background-image: url("img/horiz_bar_bottom_glow.png");
+	background-origin: content-box;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: 108% 22px;
+	border-image: none;
+	padding: 2px 0px;
+}
+
+.tab.left:active,
+.notebook tab.left:active {
+	background-color: @bg_color;
+	background-image: url("img/vert_bar_right_glow.png");
+	background-origin: content-box;
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: 96px 108%;
+	border-image: none;
+	padding: 0px 2px;
+}
+
+.tab.right:active,
+.notebook tab.right:active {
+	background-color: @bg_color;
+	background-image: url("img/vert_bar_left_glow.png");
+	background-origin: content-box;
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-size: 96px 108%;
+	border-image: none;
+	padding: 0px 2px;
+}
+
+GtkSwitch.slider {
+	background-color: transparent;
+	background-image: url("img/led_dark.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+GtkSwitch.slider:active,
+GtkSwitch.slider:hover {
+	background-color: transparent;
+	background-image: url("img/led_light.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+
+.action-bar,
+.header-bar,
+.search-bar,
+.toolbar {
+	background-color: @bg_color;
+	background-image: url("img/button_normal.png");
+	background-origin: content-box;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 110% 108%;
+	border: none;
+	padding: 2px 4px;
+}
+
+.info-bar,
+.tooltip {
+	background-color: @tooltip_bg_color;
+	border-image: url("img/bevel_out.png") 1 1 1 1 / 1px 1px 1px 1px stretch;
+	color: @tooltip_fg_color;
+}
+
+.dialog-action-area {
+	background-color: @bg_color;
+	background-image: url("img/separator_horiz.png");
+	background-origin: border-box;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: 100% 2px;
+}
+
+.dnd,
+.prompt,
+GtkDialog {
+	background-color: @base_color;
+	border-image: url("img/bevel_out.png") 1 1 1 1 / 0px 1px 1px 1px stretch;
+}
+
+GtkBox,
+GtkBox:insensitive,
+GtkGrid,
+GtkGrid:insensitive,
+GtkImage,
+GtKImage:insensitive,
+GtkLabel,
+GtkLabel:insensitive,
+GtkStatusIcon,
+GtkStatusIcon:insensitive,
+GtkToolButton,
+GtkToolButton:insensitive {
+	background-color: transparent;
+}
+
+GtkImage {
+	color: @selected_fg_color;
+}
+
+GtkImage:active,
+GtkImage:hover,
+GtkLabel:active,
+GtkLabel:hover {
+	color: @selected_bg_color;
+}
+
+GtkImage:insensitive,
+GtkLabel:insensitive {
+	color: @insensitive_fg_color;
+}
+
+GtkToolItemGroup {
+	background-color: @bg_color;
+	color: shade(@selected_fg_color,0.76);
+	background-image: url("img/holes_tiny_vert.png"), url("img/bg_radgrad.png");
+	background-position: center;
+	background-repeat: repeat, no-repeat;
+	background-size: auto, 100% 100%;
+	background-origin: content-box;
+}
+
+GtkInfoBar .titlebar,
+GtkDialog .titlebar,
+.titlebar {
+	background-image: url("img/shine.png"),url("img/vgrad_med_curved.png");
+	background-position: center -2px, center;
+	background-repeat: no-repeat;
+	background-origin: border-box;
+	background-size: auto, 100% 100%;
+	border-image: url("img/bevel_out.png") 1 1 1 1 / 1px 1px 1px 1px stretch;
+}
+
+StateBox,
+GtkCellView,
+GtkFlowBox,
+GtkListBox,
+GtkFixed,
+GtkIconView,
+GtkTable,
+GtkTreeView,
+GtkTextView {
+	background-color: @base_color;
+	padding: 4px;
+}
+
+GtkGrid.pane-separator {
+	background-color: @base_color;
+	background-image: url("img/holes_vert.png");
+	background-origin: border-box;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	border-image: none;
+}
+
+GtkPaned.pane-separator {
+	background-color: transparent;
+	background-image: url("img/holes_vert.png");
+	background-origin: border-box;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+GtkWindow { padding: 0px }
+
+/*
+ * vim:fenc=utf-8:ft=css:ci:pi:sts=0:sw=4:ts=4:
+ */
