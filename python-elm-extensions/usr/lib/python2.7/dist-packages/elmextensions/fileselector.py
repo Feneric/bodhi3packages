@@ -12,6 +12,7 @@ from efl.elementary.separator import Separator
 from efl.elementary.panes import Panes
 from efl.elementary.popup import Popup
 from efl.elementary.entry import Entry, ELM_INPUT_HINT_AUTO_COMPLETE
+from efl.elementary.image import Image
 from efl.evas import EVAS_HINT_EXPAND, EVAS_HINT_FILL, EVAS_CALLBACK_KEY_DOWN
 from efl import ecore
 
@@ -77,6 +78,7 @@ class FileSelector(Box):
         self.showHidden = False
         self.currentDirectory = None
         self.focusedEntry = None
+        self.folderOnly = False
         self.sortReverse = False
         self.addingHidden = False
         self.pendingFiles = deque()
@@ -232,8 +234,14 @@ class FileSelector(Box):
         self.fileList.callback_activated_add(self.fileDoubleClicked)
         self.fileList.show()
         
+        self.previewImage = previewImage = Image(self)
+        #previewImage.size_hint_weight = EXPAND_BOTH
+        previewImage.size_hint_align = FILL_BOTH
+        previewImage.show()
+        
         self.fileListBox.pack_end(self.fileSortButton)
         self.fileListBox.pack_end(self.fileList)
+        self.fileListBox.pack_end(self.previewImage)
 
         self.fileSelectorBox.part_content_set("left", self.bookmarkBox)
         self.fileSelectorBox.part_content_set("right", self.fileListBox)
@@ -323,6 +331,14 @@ class FileSelector(Box):
 
         if defaultPopulate:
             self.populateFiles(startPath)
+
+    def folderOnlySet(self, ourValue):
+        self.folderOnly = ourValue
+        
+        if not self.folderOnly:
+            self.filenameBox.show()
+        else:
+            self.filenameBox.hide()
 
     def createFolder(self, obj):
         newDir = "%s%s"%(self.currentDirectory, self.createEn.text)
@@ -421,7 +437,10 @@ class FileSelector(Box):
     def getFolderContents(self):
         ourPath = self.currentDirectory
         
-        data = os.listdir(unicode(ourPath))
+        try:
+            data = os.listdir(unicode(ourPath))
+        except:
+            data = os.listdir(str(ourPath))
         
         sortedData = []
 
@@ -500,6 +519,13 @@ class FileSelector(Box):
         self.addButton.disabled = True
         self.removeButton.disabled = True
         self.selectedFolder = None
+        
+        #Update image preview if an image is selected
+        if ourFile[-3:] in ["jpg", "png", "gif"]:
+            self.previewImage.file_set("%s/%s"%(self.filepathEntry.text, ourFile))
+            self.previewImage.size_hint_weight = (1.0, 0.4)
+        else:
+            self.previewImage.size_hint_weight = (0, 0)
 
     def directorySelected(self, btn):
         ourPath = btn.data["path"]
@@ -601,8 +627,11 @@ class FileSelector(Box):
             self.cancelCallback(self)
 
     def actionButtonPressed(self, btn):
-        if self.actionCallback and self.fileEntry.text:
-            self.actionCallback(self, "%s%s"%(self.filepathEntry.text, self.fileEntry.text))
+        if self.actionCallback:
+            if not self.folderOnly and self.fileEntry.text:
+                self.actionCallback(self, "%s%s"%(self.filepathEntry.text, self.fileEntry.text))
+            elif self.folderOnly:
+                self.actionCallback(self, "%s"%(self.filepathEntry.text))
 
     def fileEntryChanged(self, en):
         typed = en.text.split("/")[-1]
